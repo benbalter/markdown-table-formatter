@@ -53,7 +53,7 @@ class MarkdownTableFormatter
     t.insert(1, header_separator_row) if @header
     t.each_with_index do |row, index|
       row.map!.with_index { |cell, index| cell = pad(cell, column_width(index)) }
-      output += "#{row.join(" | ")} |\n"
+      output += "#{row.join(" | ").lstrip} |\n"
     end
     output
   end
